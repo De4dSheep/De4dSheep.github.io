@@ -87,7 +87,6 @@ iframe{
     line-height: 3.6rem;
     text-shadow: 0.1rem 0.1rem 0px #ffffff;
     writing-mode: vertical-rl;
-
 }
 
 .fa-slash{
@@ -253,8 +252,7 @@ header .Dog{
     grid-row: 2 / 3;
     margin-left: 5rem;
     filter: grayscale(25%);
-
-  }
+}
   
 .lo_text {
     grid-column: 2 / 3;
@@ -264,7 +262,7 @@ header .Dog{
     flex-direction: column;
     justify-content: center;  /* 文字從上方開始 */
     gap: 4rem;                /* 各段落之間間距 */
-  }
+}
     
   /* Dog 圖：用絕對定位跨出 Grid */
 .location .Dog {
@@ -371,11 +369,11 @@ header .Dog{
     justify-content: space-between;
     position: relative;
   }
-  /* 方案 B：容器偽元素繪製連線 */
+
 .timeline::before {
     content: '';
     position: absolute;
-    top: 7.2rem; /* 根據 icon 與文字微調 */
+    top: 7.2rem;
     left: -1000px;
     right: -20px;
     height: 0.4rem;
@@ -475,7 +473,6 @@ footer iframe{
     border-radius: 50px;
  
     grid-column: 1/3;
-
     filter: grayscale(100%);
 }
 
