@@ -1,0 +1,534 @@
+@import url('reset.css');
+
+html{
+    font-size: 62.5%; /* 預設字級是16px, 16 x 62.5% ＝ 10 , 方便計算*/
+  }  
+
+body{
+    background-image: url(../img/BG_paperr.jpg);
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0.25);
+    background-blend-mode:  color-dodge;
+
+    font-family: "Klee One", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #4e4e4e;
+    line-height: 1.6;
+    font-size: 2.4rem;
+}
+
+/* ------------ MOD ------------ */
+.Dog{
+    display: none;
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    margin: 0 auto;
+    max-width: 1400px;
+    aspect-ratio: 16 / 9;
+
+    padding: 0 10px;
+    margin-top: 2rem;
+    position: relative;
+
+    outline: 1px solid rgb(115, 0, 255);
+}
+
+iframe{
+    width: 99.5%;
+    height: 99.5%;
+    border-radius: 25px;
+}
+
+.title{
+    font-size: 4.4rem;
+    font-weight: 600;
+    letter-spacing: 1.5rem; /* 控制垂直方向的字間距 */
+
+    position: absolute;
+    left: 0%;
+    top: -0%;
+
+    writing-mode: vertical-rl;   /* 或 vertical-lr，看你要从右向左还是从左向右 */
+}
+
+.card{
+    background-image: url(../img/image_BG.png);
+    background-size: 100% 100%;
+    overflow: hidden;
+    display: flex;
+
+    outline: 1px solid rgb(0, 255, 68);
+  }
+
+/* ------------ navR ------------ */
+.navR{
+    flex-direction: column;
+
+    position: fixed;
+    top: 50%;
+    right: 10px;
+
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.navR li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navR a{
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    line-height: 3.6rem;
+    text-shadow: 0.1rem 0.1rem 0px #ffffff;
+    writing-mode: vertical-rl;
+
+}
+
+.fa-slash{
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+/* ------------ Header ------------ */
+header{
+    max-width: 1440px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    margin-top: 2rem;
+    position: relative;
+
+    outline: 1px solid rgb(115, 0, 255);
+}
+
+header .kv {
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    left: -2%;
+    top: -15%;
+    border-radius: 40%;
+    overflow: hidden;
+}
+
+/* header .kv img{transform: translate(-10%, -18%);} */
+
+header .text{
+    writing-mode: vertical-lr;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 2rem;
+
+    position: absolute;
+    left: 60%;
+    top: 0;
+}
+
+header .text h2{
+    position: relative;
+    left: -5rem;
+    padding-top: 15rem;
+}
+
+header .text :nth-child(2){
+    padding-top: 25rem;
+}
+
+header h2 span{
+    display: inline-block;
+    transform: translate(-1.2rem, 1rem);
+}
+
+header h1 span{
+    writing-mode: horizontal-tb;
+    position: relative;
+    left:10rem;
+    top: -1rem;
+}
+
+header .social{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+header a{
+    opacity: 0.3;
+    background-blend-mode:  color-burn;
+    text-decoration: none;
+    color: #333;
+    font-size: 5rem;
+    letter-spacing: 3rem;
+}
+
+header .Dog{
+    display: block;
+    width: 500px;
+    transform: rotate(-5deg);
+
+    position: absolute;
+    left: 0%;
+    bottom: 5%;
+}
+
+/* ------------ intro ------------ */
+.intr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    
+    grid-template-areas:
+    "text1  cd1    cd2"
+    "dog    text2  cd2"
+    "text3  text3  cd2";
+}
+
+.card img{
+    width:100%;
+    border-radius: 3rem;
+    object-fit: cover;
+}
+
+.cd1{
+    grid-area: cd1;
+    padding: 1.5rem 4rem 2.5rem 2rem;
+}
+
+.cd2{
+    grid-area: cd2;
+    transform: rotate(3deg);
+    padding: 2.5rem 4rem 5.5rem 2.5rem;
+}
+
+.intr_text{
+    grid-area: text1;
+    padding-left: 25%;
+    padding-top: 30%;
+}
+
+.intr_text2{ 
+    grid-area: text2;
+    padding-right: 5%;
+    padding-top: 10%;
+}
+
+.intr_text3 {
+    grid-area: text3;
+    padding-right: 26%;
+    padding-left: 5%;
+    margin-top: -0%;
+}  
+
+
+.intr .Dog{
+    display: block;
+    width: 250px;
+    grid-area: dog;
+
+    padding-left: 55%;
+    transform: translate(0%, 15%);
+}
+
+.intr .text h2{
+    font-size: 3.6rem;
+    font-weight: 600;
+}
+   
+.intr .text p{
+    padding-left: 2rem;
+    font-weight: 400;    
+}
+/* ------------ location&time ------------ */
+.location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;      /* 左側地圖 1fr，右側文字 1fr */
+    grid-template-rows: 0.1fr auto 0.1fr;    /* 第一列（可留白）、第二列（內容） */
+    gap: 0px;                              /* 如果要間距可改這裡 */
+    position: relative;                 /* 讓絕對定位的 .Dog 參考於此 */
+}
+
+.location iframe {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-left: 5rem;
+    filter: grayscale(25%);
+
+  }
+  
+.lo_text {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding-left: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* 文字從上方開始 */
+    gap: 4rem;                /* 各段落之間間距 */
+  }
+    
+  /* Dog 圖：用絕對定位跨出 Grid */
+.location .Dog {
+    position: absolute;     /* 脫離 Grid 流 */
+    right: 3%;          /* 靠右對齊，可調整 */
+    bottom: 3%;              /* 往下溢出 80px，可調整 */
+    width: 300px;           /* 保持你的尺寸 */
+    transform: scaleX(-1);
+    display: block;
+  }
+
+.lo_text h2{
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+
+    font-size: 3.6rem;
+}
+
+.lo_text p{
+    padding-left: 2.4rem;
+}
+
+.lo_text span{
+    color: rgba(78, 78, 78, 0.4);
+} 
+
+  
+/* ------------ post ------------ */
+.post{
+    aspect-ratio: auto;
+    position: relative;
+}
+
+.fb {
+    /* overflow: hidden; */
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 5rem;
+    padding-left: 5%;
+    padding-bottom: 3rem;
+    z-index: -1;
+  }
+  
+.fb iframe {
+    width: 330px;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+  
+.post .Dog {
+    display: block;
+    width: 170px;
+    filter: drop-shadow(-2px -2px 8px rgba(255, 255, 255, 0.5));
+
+    transform: scaleX(-1);
+    position: absolute;
+    left: -3%;
+    bottom: 5%;
+}
+
+/* ------------ FAQ-TimeLine ------------ */
+.FAQ-TL{aspect-ratio: auto;}
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+    padding-left: 5%;
+}
+.faq-item {
+    background: #fff;
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    box-shadow: 0.5rem 0.5rem 5px rgba(0, 0, 0, 0.3);
+}
+.faq-item i {
+    color: #E6A23C; /* 品牌點睛色 */
+    font-size: 3.6rem;
+    margin-right: 0.8rem;
+}
+.faq-item h4 {
+    display: inline-block;
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+.faq-item p {
+    font-size: 2.4rem;
+    line-height: 1.6;
+    padding-left: 0.8rem;    
+}
+.faq-grid .faq-ps {
+    font-size: 1.8rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 1.4rem;
+    float: right;
+  }
+  
+ /* Timeline */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  /* 方案 B：容器偽元素繪製連線 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 7.2rem; /* 根據 icon 與文字微調 */
+    left: -1000px;
+    right: -20px;
+    height: 0.4rem;
+    background: #d0f7fb;
+    z-index: -1;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 6.2rem;
+    right: -40px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid #d0f7fb;
+    z-index: -1;
+}
+.timeline-step {
+    flex: 1;
+    text-align: center;
+}
+  /* 在 icon 下方加一個小圓點 */
+.timeline-step i::after {
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #d0f7fb;           /* 節點顏色，可與時間軸顏色一致或品牌色 */
+    border-radius: 50%;
+    margin: 3.2rem auto 0.4rem;         /* 距離 icon 底部 6px，水平置中 */
+}  
+.timeline-step i {
+    font-size: 3.6rem;
+    color: #409EFF; /* 另一品牌亮色 */
+    margin-bottom: 0;
+    display: block;
+}
+.timeline-step h4 {
+    font-size: 2.4rem;
+    margin-bottom: 0.2rem;
+}
+.timeline-step p {
+    font-size: 2rem;
+    color: #333;
+}
+.timeline-step .timeline-ps {
+    display: block;
+    font-size: 2rem;
+    color: #777;
+    font-style: italic;
+}
+
+.FAQ-TL .Dog{
+    display: block;
+    width: 200px;
+    transform: scaleX(-1);
+
+    position: absolute;
+    left: -5%;
+    bottom: 18%;
+}
+  
+  /* 手機響應 */
+  @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .timeline {
+      flex-direction: column;
+      padding: 16px 0;
+    }
+    .timeline-step {
+      padding: 16px 0;
+    }
+    .timeline::before {
+      display: none; /* 或改為垂直線 */
+    }
+  }
+  
+/* ------------ Footer ------------ */
+footer{
+    background-color:#333;
+    padding: 50px;
+    color: white;
+    height: 35vh;
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer iframe{
+    display: block;
+    width: 90%;height: 100%;
+    border-radius: 50px;
+ 
+    grid-column: 1/2;
+
+    filter: grayscale(100%);
+}
+
+.time{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    grid-column: 3/5;
+}
+
+.time2 :first-child{
+    opacity: 0;
+}
+
+.time2 :nth-child(4){
+    margin-bottom: 16px;
+}
+
+.time p{
+    text-align: left;
+    margin-bottom: 24px;
+
+    font-size: 1.6rem;
+}
+
+.time span{
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.time a{
+    display: block;
+    background-color: #ffffff;
+    width: 210px;
+    border-radius: 30px;
+
+    text-align: left;    
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 8px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
